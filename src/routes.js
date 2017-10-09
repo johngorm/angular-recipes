@@ -6,8 +6,28 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('app', {
+    .state('home', {
+      name: 'home',
       url: '/',
       component: 'app'
+    })
+    .state('cookbook', {
+      name: 'cookbook',
+      url: '/recipe/',
+      template: require('./app/cookbook.html')
+      // resolve: {
+      //   cookbook: RecipeService => {
+      //     return RecipeService.getAllRecipes();
+      //   }
+      // }
+    })
+    .state('recipe', {
+      url: '/recipe/{recipeId}',
+      component: 'recipe'
+      // resolve: {
+      //   recipe: (RecipeService, $transition$) => {
+      //     return RecipeService.getRecipe($transition$.params().recipeId);
+      //   }
+      // }
     });
 }

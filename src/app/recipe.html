@@ -1,0 +1,10 @@
+<div class="recipe">
+    <button class="btn btn-md btn-danger" ng-click="deleteRecipe($ctrl.id)"><span class="glyphicon plyphicon-remove"></span></button>
+    <p class="recipe-name">{{$ctrl.name}}</p>
+    <p>Ingredients</p> 
+    <ul>
+        <li ng-repeat="item in $ctrl.ingredients">{{item}}</li>
+    </ul>
+    <p>Directions: {{$ctrl.directions}}</p>
+    <p>Rating: {{$ctrl.rating}}</p>
+</div>
