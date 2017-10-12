@@ -1,29 +1,25 @@
 import angular from 'angular';
-import {hello} from './app/hello';
+import 'todomvc-app-css/index.css';
+
+import {TodoService} from './app/todos/todos';
+import {App} from './app/containers/App';
+import {Header} from './app/components/Header';
+import {MainSection} from './app/components/MainSection';
+import {TodoTextInput} from './app/components/TodoTextInput';
+import {TodoItem} from './app/components/TodoItem';
+import {Footer} from './app/components/Footer';
 import 'angular-ui-router';
-import 'angular-smart-table';
 import routesConfig from './routes';
 
 import './index.scss';
 
-export const app = 'app';
-
 angular
-  .module(app, ['ui.router', 'smart-table'])
+  .module('app', ['ui.router'])
   .config(routesConfig)
-  .component('app', hello)
-  .service('RecipeService', $http => {
-    const service = {
-      getAllRecipes: () => {
-        return $http.get('temp/data/recipes.json', {cache: true})
-              .then(res => {
-                return res;
-              });
-      }
-
-        // getRecipe : (id) =>{
-        //     // This will perform a GET on the express servers "api/recipe/:id" route
-        // }
-    };
-    return service;
-  });
+  .service('todoService', TodoService)
+  .component('app', App)
+  .component('headerComponent', Header)
+  .component('footerComponent', Footer)
+  .component('mainSection', MainSection)
+  .component('todoTextInput', TodoTextInput)
+  .component('todoItem', TodoItem);
