@@ -1,0 +1,18 @@
+<table st-table="$ctrl.recipeCollection" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Recipe</th>
+		<th>Ingredients</th>
+		<th>Directions</th>
+		<th>Rating</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="recipe in $ctrl.recipeCollection">
+		<td>{{recipe.name}}</td>
+		<td>{{recipe.ingredients}}</td>
+		<td>{{recipe.directions}}</td>
+		<td>{{recipe.rating}}</td>
+	</tr>
+	</tbody>
+</table>
