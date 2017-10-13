@@ -4,8 +4,7 @@ class CookbookController {
     this.$timeout = $timeout;
     this.$window = $window;
     this.recipeService = recipeService;
-    this.recipeCollection = [];
-    this.recipeCollection.push(this.recipeService.getAllRecipes());
+    this.recipeCollection = this.recipeService.getAllRecipes();
   }
 
 }

@@ -11,8 +11,8 @@ class RecipeController {
 
 export const Recipe = {
   template: require('./Recipe.html'),
-  controller: 'RecipeController',
+  controller: RecipeController,
   binding: {
-    id: '<'
+    id: '='
   }
 };

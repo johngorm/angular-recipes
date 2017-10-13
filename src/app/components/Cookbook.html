@@ -5,7 +5,8 @@
 		<th>Recipe</th>
 		<th>Ingredients</th>
 		<th>Directions</th>
-		<th>Rating</th>
+        <th>Rating</th>
+        <th></th>
 	</tr>
 	</thead>
 	<tbody>
@@ -15,7 +16,7 @@
 		<td>{{recipe.directions}}</td>
         <td>{{recipe.rating}}</td>
         <td>
-            <button type="button btn btn-lg " ui-sref-active='recipe({ID: recipe.id})'>Go to Recipe Page</button>
+            <button type="button btn btn-lg " ui-sref='recipe({ID:recipe.id})' ui-sref-active='recipe({ID: recipe.id})'>Go to Recipe Page</button>
         </td>
 	</tr>
 	</tbody>
