@@ -1,3 +1,4 @@
+<h3><strong>Your Cookbook</strong></h3>
 <table st-table="$ctrl.recipeCollection" class="table table-striped">
 	<thead>
 	<tr>
@@ -10,7 +11,7 @@
 	<tbody>
 	<tr ng-repeat="recipe in $ctrl.recipeCollection">
 		<td>{{recipe.name}}</td>
-		<td>{{recipe.ingredients}}</td>
+		<td><p ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</p></td>
 		<td>{{recipe.directions}}</td>
 		<td>{{recipe.rating}}</td>
 	</tr>
