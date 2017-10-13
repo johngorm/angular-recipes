@@ -35,10 +35,11 @@ export class RecipeService {
         rating: 3
       }
     ];
-    recipes.forEach(recipe => {
-      if (recipe.id === ReqId) {
-        return recipe;
+    for (let ii = 0; ii < recipes.length; ii++) {
+      if (recipes[ii].id === ReqId) {
+        return recipes[ii];
       }
-    });
+    }
+    return null;
   }
 }
