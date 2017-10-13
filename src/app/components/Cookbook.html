@@ -13,7 +13,10 @@
 		<td>{{recipe.name}}</td>
 		<td><p ng-repeat="ingredient in recipe.ingredients">{{ingredient}}</p></td>
 		<td>{{recipe.directions}}</td>
-		<td>{{recipe.rating}}</td>
+        <td>{{recipe.rating}}</td>
+        <td>
+            <button type="button btn btn-lg " ui-sref-active='recipe({ID: recipe.id})'>Go to Recipe Page</button>
+        </td>
 	</tr>
 	</tbody>
 </table>

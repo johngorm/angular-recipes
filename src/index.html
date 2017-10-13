@@ -1,18 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <title>FountainJS</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
-  </head>
 
-  <body ng-app="app">
-    <div class="todoapp">
-      <a ui-sref="cookbook" ui-sref-active="cookbook">Cookbook</a>
-      <ui-view></ui-view>
-    </div>
-  </body>
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>FountainJS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="app">
+  <div class="todoapp">
+    <a ui-sref="cookbook" ui-sref-active="cookbook">Cookbook</a>
+    <a ui-sref="recipe({ID: 0})">First recipe page</a>
+    <ui-view></ui-view>
+  </div>
+</body>
+
 </html>

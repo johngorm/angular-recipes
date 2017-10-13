@@ -9,5 +9,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('cookbook', {
       url: '/recipes',
       component: 'cookbookComponent'
+    })
+    .state('recipe', {
+      url: '/recipes/{ID}',
+      component: 'recipeComponent'
     });
 }
