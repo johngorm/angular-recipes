@@ -5,6 +5,15 @@ class RecipeController {
     this.recipeService = recipeService;
     this.id = $stateParams.ID;
     this.recipe = this.recipeService.getRecipe(parseInt(this.id, 10));
+    this.editMode = false;
+  }
+
+  handleEditClick() {
+    if (this.editMode === false) {
+      this.editMode = true;
+    } else {
+      this.editMode = false;
+    }
   }
 }
 

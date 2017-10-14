@@ -12,6 +12,11 @@ import './index.scss';
 angular
   .module('app', ['ui.router', 'smart-table'])
   .config(routesConfig)
+  .filter('arrToString', () => {
+    return arr => {
+      return arr.join(',');
+    };
+  })
   .service('recipeService', RecipeService)
   .component('recipeComponent', Recipe)
   // .component('app', App)

@@ -1,6 +1,39 @@
 <cookbook-component></cookbook-component>
-<div>
-    <h1>{{$ctrl.recipe.name}}</h1>
-    <p>This is the page for recipe number: {{$ctrl.recipe.name}}</p>
-
+<div class="container">
+    <div class="row" ng-if="!$ctrl.editMode">
+        <h1>{{$ctrl.recipe.name}}</h1>
+        <div class="col-lg-6 offset-lg-3">
+            <h3>Ingredients</h3>
+            <ul id="ingredient-bullets">
+                <li ng-repeat="ingredient in $ctrl.recipe.ingredients">
+                    {{ingredient}}
+                </li>
+            </ul>
+            <h3>Directions</h3>
+            <p class="directions">
+                {{$ctrl.recipe.directions}}
+            </p>
+            <h3>Ratings</h3>
+            <span class="rating">{{$ctrl.recipe.rating}}</span>
+            <hr>
+        </div>
+    </div>
+    <div class="row" ng-if="$ctrl.editMode">
+        <div class="col-lg-6 offset-lg-3">
+            <input type="text" id="name-input" placeholder="{{$ctrl.recipe.name}}">
+            <h3>Ingredients</h3>
+            <input type="text" placeholder="{{$ctrl.recipe.ingredients | arrToString}} ">
+            <h3>Directions</h3>
+            <textarea placeholder="{{$ctrl.recipe.directions}}"></textarea>
+            <h3>Ratings</h3>
+            <input class="rating" placeholder="{{$ctrl.recipe.rating}}">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="button" class='btn btn-info' ng-click="$ctrl.handleEditClick()">Edit Info</button>
+            <button type="button" class="btn btn-danger">Delete Recipe</button>
+        </div>
+    </div>
 </div>
